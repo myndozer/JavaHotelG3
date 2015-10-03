@@ -135,7 +135,7 @@ public class Hotel {
 		String buyersName="";
 		System.out.println("What do you want to buy");
 		for(int i=0; i<item.size(); i++){
-			System.out.println(i+1+": "+item.get(i).getName()+"- Price "+item.get(i).getPrice()+"ï¿½");
+			System.out.println(i+1+": "+item.get(i).getName()+"- Price "+item.get(i).getPrice()+"£");
 		}
 		choice = input.nextInt();
 		input.nextLine();
@@ -184,7 +184,7 @@ public class Hotel {
 		residentName = input.nextLine();
 		for(int i=0; i<5; i++){
 			/*
-			 * These checks aint working Steve
+			 * These now works
 			 */
 			if((ecoRoomList.get(i).getName().equals (residentName)
 			&& ecoRoomList.get(i).getRoomNumber() == roomNumber) 
@@ -218,10 +218,10 @@ public class Hotel {
 					System.out.print("No membership, ");
 				}
 				if(roomNumber > 5){
-					System.out.println("your bills is: "+viewRoomList.get(i).checkOut(daysStayed, member)+"ï¿½");
+					System.out.println("your bills is: "+viewRoomList.get(i).checkOut(daysStayed, member)+"£");
 				}
 				else if(roomNumber < 6){
-						System.out.println("your bill is: "+ecoRoomList.get(i).checkOut(daysStayed, member)+"ï¿½");
+						System.out.println("your bill is: "+ecoRoomList.get(i).checkOut(daysStayed, member)+"£");
 				}
 				
 				break;
