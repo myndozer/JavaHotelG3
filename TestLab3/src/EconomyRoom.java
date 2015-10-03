@@ -25,16 +25,16 @@ public EconomyRoom(int roomNumber,String description,double grundPrice){
 }
 public double checkOut(int antalDagar,boolean medlem){
 	//Code added by kim
-	double totalRäkning;
+	double totalRÃ¤kning;
 	//code ending from kim
 	if(medlem){	
-		totalRäkning=grundPrice*numberOfResidents* 80/100;
+		totalRÃ¤kning=grundPrice*numberOfResidents* 80/100;
 		clearRoom();
-	return totalRäkning ; 	
+	return totalRÃ¤kning ; 	
 	}else{
-		totalRäkning=grundPrice*numberOfResidents;
+		totalRÃ¤kning=grundPrice*numberOfResidents;
 		clearRoom();
-		return totalRäkning ;
+		return totalRÃ¤kning ;
 	}
 	
 }
