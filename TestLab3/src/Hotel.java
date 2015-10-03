@@ -31,6 +31,7 @@ public class Hotel {
 					+ "4: Exit \n"
 					+ "What would you like to do?");
 			choice = input.nextInt();
+			input.nextLine();
 			switch (choice) {
 			
 			case 1:
@@ -39,6 +40,7 @@ public class Hotel {
 						+ "2: Ocean View room - avaible: "+getOpenViewRooms());
 				//Assuming no faulty input, no Exception use
 				int choiceOfRoom = input.nextInt();
+				input.nextLine();
 				if(choiceOfRoom == 1){
 					rentOpenEconomyRoom();
 				}
@@ -98,12 +100,12 @@ public class Hotel {
 			}
 		}
 		System.out.println("What is your name");
-		input.next();
 		renterName = input.nextLine();
 		System.out.println("How many people will stay(Maximum of 3");
 		numberOfPeople = input.nextInt();
+		input.nextLine();
 		System.out.println("What is the date?");
-		currentDate = input.next();
+		currentDate = input.nextLine();
 		ecoRoomList.get(roomNumber-1).rent(renterName, currentDate, numberOfPeople);
 		System.out.println("All done! Your room is: "+roomNumber);
 	}
@@ -117,12 +119,11 @@ public class Hotel {
 			}
 		}
 		System.out.println("What is your name");
-		input.next();
 		renterName = input.nextLine();
 		System.out.println("How many people will stay");
 		numberOfPeople = input.nextInt();
+		input.nextLine();
 		System.out.println("What is the date?");
-		input.next();
 		currentDate = input.nextLine();
 		viewRoomList.get(roomNumber-6).rent(renterName, currentDate, numberOfPeople);
 		System.out.println("All done! Your room is: "+roomNumber);
@@ -134,15 +135,17 @@ public class Hotel {
 		String buyersName="";
 		System.out.println("What do you want to buy");
 		for(int i=0; i<item.size(); i++){
-			System.out.println(i+1+": "+item.get(i).getName()+"- Price "+item.get(i).getPrice()+"£");
+			System.out.println(i+1+": "+item.get(i).getName()+"- Price "+item.get(i).getPrice()+"ï¿½");
 		}
 		choice = input.nextInt();
+		input.nextLine();
 		System.out.println("How many items do you want?");
 		numberOfItems = input.nextInt();
+		input.nextLine();
 		System.out.println("What is your room number");
 		buyersRoom = input.nextInt();
+		input.nextLine();
 		System.out.println("What is your name");
-		input.next();
 		buyersName = input.nextLine();
 
 		for(int i=0; i<5; i++){
@@ -176,8 +179,8 @@ public class Hotel {
 		String residentName;
 		System.out.println("What is your room number?");
 		roomNumber = input.nextInt();
+		input.nextLine();
 		System.out.println("What is your name?");
-		input.next();
 		residentName = input.nextLine();
 		for(int i=0; i<5; i++){
 			/*
@@ -200,9 +203,11 @@ public class Hotel {
 				}
 				System.out.println("How many days did you stay?");
 				int daysStayed = input.nextInt();
+				input.nextLine();
 				boolean member = false;
 				System.out.println("Are you a member? \n 1: Yes \n 2: No");
 				int choice = input.nextInt();
+				input.nextLine();
 				if(choice == 1){
 					member = true;
 				}
@@ -213,10 +218,10 @@ public class Hotel {
 					System.out.print("No membership, ");
 				}
 				if(roomNumber > 5){
-					System.out.println("your bills is: "+viewRoomList.get(i).checkOut(daysStayed, member)+"£");
+					System.out.println("your bills is: "+viewRoomList.get(i).checkOut(daysStayed, member)+"ï¿½");
 				}
 				else if(roomNumber < 6){
-						System.out.println("your bill is: "+ecoRoomList.get(i).checkOut(daysStayed, member)+"£");
+						System.out.println("your bill is: "+ecoRoomList.get(i).checkOut(daysStayed, member)+"ï¿½");
 				}
 				
 				break;
